@@ -5,7 +5,9 @@ import Sub from './sub'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from './img-1.png';
 import img2 from './img-2.png';
-import {Card, Button} from 'react-bootstrap';
+import img3 from './img-3.png';
+import img4 from './img-4.png';
+import {Card, Button, CardDeck} from 'react-bootstrap';
 
 
 class App extends Component {
@@ -39,8 +41,8 @@ class App extends Component {
           (this.state.pageNum === 1) ?
           <div>
           <header className="App-header">
-            <div>
-              <header className="head-tag">Nature tree</header>
+            <div className="whl-div">
+              <header className="head-tag">In regards to the Enviornment, would you like to donate to ...</header>
               <input onClick={()=>{this.changePageNum(5)}} type="button" className="questions" value="Animals"></input>
               <input onClick={()=>{this.changePageNum(6)}} type="button" className="questions" value="Ecological"></input>
             </div>
@@ -50,7 +52,7 @@ class App extends Component {
           (this.state.pageNum === 2) ?
           <div>
           <header className="App-header">
-            <div>
+            <div className="whl-div">
               <header className="head-tag">Medicine tree</header>
               <input onClick={()=>{this.changePageNum(9)}} type="button" className="questions" value="Disease Prevention"></input>
               <input onClick={()=>{this.changePageNum(10)}} type="button" className="questions" value="Mental Health Awareness"></input>
@@ -61,7 +63,7 @@ class App extends Component {
           : (this.state.pageNum === 3) ?
           <div>
           <header className="App-header">
-            <div>
+            <div className="whl-div">
               <header className="head-tag">Education</header>
               <input onClick={()=>{this.changePageNum(13)}} type="button" className="questions" value="Primary Education"></input>
               <input onClick={()=>{this.changePageNum(14)}} type="button" className="questions" value="Undergrauate Research"></input>
@@ -71,7 +73,7 @@ class App extends Component {
           : (this.state.pageNum === 4) ?
           <div>
           <header className="App-header">
-            <div>
+            <div className="whl-div">
               <header className="head-tag">International Affairs</header>
               <input onClick={()=>{this.changePageNum(17)}} type="button" className="questions" value="Disaster Relief"></input>
               <input onClick={()=>{this.changePageNum(18)}} type="button" className="questions" value="Impoverished Countries"></input>
@@ -83,7 +85,7 @@ class App extends Component {
           : (this.state.pageNum === 5) ?
           <div>
           <header className="App-header">
-            <div>
+            <div className="whl-div">
               <header className="head-tag">What type of animal organization would you like to donate to?</header>
               <input onClick={()=>{this.changePageNum(6)}} type="button" className="questions" value="Wild"></input>
               <input onClick={()=>{this.changePageNum(22)}} type="button" className="questions" value="Domestic"></input>
@@ -93,45 +95,43 @@ class App extends Component {
           : (this.state.pageNum === 6) ?
           <div>
           <header className="App-header">
-            <div>
-              <p>Here are links that you might like to donate too</p>
+            <div classNames="cards">
+              <p className="head-tag">Here are links that you might like to donate to</p>
+              <CardDeck>
               <Card className="card-tags" style={{ width: '20rem'}}>
-                  <Card.Img variant="top" src={img1} width={300} height={100} />
-                  <Card.Body>
+                <Card.Img variant="top" src={img1} width={300} height={170} />
+                <Card.Body>
                     <Card.Title>The American Society for the Prevention of Cruelty to Animals®</Card.Title>
-                    <Card.Text>
-                    a national leader in animal rescue, protection and placement, and has worked tirelessly for over 150 years to put an end to animal abuse and neglect.
-                    </Card.Text>
-                  <Button variant="primary">Donate Here</Button>
+                    <Card.Text>The American Society for the Prevention of Cruelty to Animals® (ASPCA) is a national leader in animal rescue, protection and placement, and has worked tirelessly for over 150 years to put an end to animal abuse and neglect.</Card.Text>
+                    <Button href="https://secure.aspca.org/donate/2019-eap-dgf1-web-c-T1-P1?ms=wb_hom_position1-dgf1-c-20190320&initialms=wb_hom_position1-dgf1-c-20190320&pcode=WEB1HOM&lpcode=WEB2HOM">Donate</Button>
                 </Card.Body>
               </Card>
               <Card className="card-tags" style={{ width: '20rem'}}>
-                <Card.Img variant="top" src={img1} width={300} height={100} />
+                <Card.Img variant="top" src={img3} width={300} height={170} />
                 <Card.Body>
-                  <Card.Title>The American Society for the Prevention of Cruelty to Animals®</Card.Title>
+                  <Card.Title>The humane league </Card.Title>
                   <Card.Text>
-                  a national leader in animal rescue, protection and placement, and has worked tirelessly for over 150 years to put an end to animal abuse and neglect.
-                  </Card.Text>
-                <Button variant="primary">Donate Here</Button>
+                  We exist to end the abuse of animals raised for food. We work to reform the way farm animals are treated while also inspiring people to make more compassionate food choices. Our strategy includes hard-hitting corporate campaigns and wide-ranging outreach and education programs, supported by an extensive network of organizations, activists and supporters around the world.                  </Card.Text>
+                  <Button href="https://secure.everyaction.com/cG8HRvst7kCtYR-AxtqC3w2">Donate</Button>
               </Card.Body>
             </Card>
               <Card className="card-tags" style={{ width: '20rem'}}>
-                <Card.Img variant="top" src={img1} width={300} height={100} />
+                <Card.Img variant="top" src={img4} width={300} height={170} />
                 <Card.Body>
-                  <Card.Title>The American Society for the Prevention of Cruelty to Animals®</Card.Title>
+                  <Card.Title>Best friends animal society </Card.Title>
                   <Card.Text>
-                  a national leader in animal rescue, protection and placement, and has worked tirelessly for over 150 years to put an end to animal abuse and neglect.
-                  </Card.Text>
-                <Button variant="primary">Donate Here</Button>
+                  Your contribution to Best Friends goes straight to work helping tens of thousands of animals—both at the Sanctuary and through outreach and rescue programs all across the country.                   </Card.Text>
+                  <Button href="https://support.bestfriends.org/site/Donation2?df_id=2884&mfc_pref=T&2884.donation=form1&gclid=EAIaIQobChMI77upyd6Z4QIVxlSGCh3yPwuvEAAYASAAEgJ2p_D_BwEhttps://secure.everyaction.com/cG8HRvst7kCtYR-AxtqC3w2">Donate</Button>
               </Card.Body>
             </Card>
+            </CardDeck>
             </div>
           </header>
           </div>
           : (this.state.pageNum === 7) ?
           <div>
           <header className="App-header">
-            <div>
+            <div className="whl-div">
               <header className="head-tag">Which of these has the most importance?</header>
               <input onClick={()=>{this.changePageNum(29)}} type="button" className="questions" value="3-2 Input Button"></input>
               <input onClick={()=>{this.changePageNum(30)}} type="button" className="questions" value="3-2 Input Button"></input>
@@ -162,21 +162,7 @@ class App extends Component {
               </div>
             </div> 
           : ""
-
           }
-        
-          <Card style={{ width: '18rem'}}>
-          <Card.Img variant="top" src={img1} width={300} height={100} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-
         </div>
     );
   }
